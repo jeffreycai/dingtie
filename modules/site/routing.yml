@@ -1,0 +1,53 @@
+routing:
+  index:
+    path: ^\/?$
+    isSecure: 0
+    i18n: 0
+    controller: site/index
+    
+  tigtag_user_list:
+    path: ^\/admin\/tigtag\/user\/list$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_list
+  tigtag_user_create:
+    path: ^\/admin\/tigtag\/user\/create$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_create
+  tigtag_user_export:
+    path: ^\/admin\/tigtag\/user\/export$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_export
+  tigtag_user_validate:
+    path: ^\/admin\/tigtag\/user\/validate\/(\d+)$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_validate
+  tigtag_user_refresh:
+    path: ^\/admin\/tigtag\/user\/refresh\/(\d+)$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_refresh
+  tigtag_user_delete:
+    path: ^\/admin\/tigtag\/user\/delete\/(\d+)$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_delete
+    
+    
+assets:
+  backend:
+    js:
+      site:
+        path: .?
+        position: bottom
+        weight: 30
+        source: site/assets/js/script.js
+    css:
+      site:
+        path: .?
+        position: top
+        weight: 30
+        source: site/assets/css/style.css
