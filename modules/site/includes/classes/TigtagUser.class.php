@@ -164,7 +164,7 @@ COLLATE = utf8_general_ci;
   
   static function findByUsername($username, $instance = 'TigtagUser') {
     global $mysqli;
-    $query = 'SELECT * FROM tigtag_user WHERE id=' . $username;
+    $query = 'SELECT * FROM tigtag_user WHERE username=' . DBObject::prepare_val_for_sql($username);
     $result = $mysqli->query($query);
     if ($result && $t = $result->fetch_object()) {
       $tigtag_user = new $instance();

@@ -18,6 +18,7 @@ $messages = $settings['dingtie_messages'];
 // get a valid user
 $user;
 if ($user = TigtagUser::getFirstValidUser()) {
+$user = TigtagUser::findByUsername('ozboxoffice');
 
   $user->setLastUsed(time());
   $user->save();
