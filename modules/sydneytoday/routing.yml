@@ -1,0 +1,22 @@
+routing:
+
+  admin_st_user_list:
+    path: ^\/admin\/st_user\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_user_list
+  admin_st_user_edit:
+    path: ^\/admin\/st_user\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_user_edit
+  admin_st_user_create:
+    path: ^\/admin\/st_user\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_user_create
+  admin_st_user_delete:
+    path: ^\/admin\/st_user\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: sydneytoday/backend/st_user_delete

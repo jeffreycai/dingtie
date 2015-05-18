@@ -6,3 +6,24 @@ st_user:
     password: VARCHAR(16)
     last_used: INT
     registered_at: INT
+  form:
+    fields:
+      email:
+        widget: text
+        widget_conf:
+          required: 1
+      password:
+        widget: password
+        widget_conf:
+          required: 1
+      last_used:
+        widget: text
+        widget_conf:
+          required: 0
+      registered_at:
+        widget: text
+        widget_conf:
+          required: 0
+    names:
+      en: "SydneyToday User"
+      zh: "今日悉尼用户"
