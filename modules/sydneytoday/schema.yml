@@ -1,0 +1,8 @@
+st_user:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    email: VARCHAR(128) NOT NULL
+    password: VARCHAR(16)
+    last_used: INT
+    registered_at: INT
