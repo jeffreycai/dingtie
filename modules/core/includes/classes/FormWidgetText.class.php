@@ -19,7 +19,7 @@ class FormWidgetText extends FormWidget {
     $rtn .=
 "\n<div class='form-group'>
   <label for='$this->name'>$this->name</label>
-  <input value='[[[ echo $prepopulate ]]]' type='text' class='form-control' id='$this->name' name='$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
+  <input value='[[[ echo htmlentities(str_replace('\'', '\"', $prepopulate)) ]]]' type='text' class='form-control' id='$this->name' name='$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
 </div>
 ";
     return $rtn;

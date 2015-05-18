@@ -20,11 +20,11 @@ class FormWidgetEmail extends FormWidget {
     $rtn .=
 "\n<div class='form-group'>
   <label for='$this->name'>$this->name</label>
-  <input value='[[[ echo $prepopulate ]]]' type='email' class='form-control' id='$this->name' name='$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
+  <input value='[[[ echo htmlentities(str_replace('\'', '\"', $prepopulate)) ]]]' type='email' class='form-control' id='$this->name' name='$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
 </div>
 <div class='form-group'>
   <label for='retype_$this->name'>[[[ echo i18n(array('en' => 'Retype', 'zh' => '再输一次')) ]]] $this->name</label>
-  <input value='[[[ echo $prepopulate_retype ]]]' type='email' class='form-control' id='retype_$this->name' name='retype_$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
+  <input value='[[[ echo htmlentities(str_replace('\'', '\"', $prepopulate_retype)) ]]]' type='email' class='form-control' id='retype_$this->name' name='retype_$this->name'".($this->required ? ' required' : '').($this->size ? ' size='.$this->size : '')." />
 </div>
 ";
     return $rtn;
