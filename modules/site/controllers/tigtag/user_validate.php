@@ -8,7 +8,11 @@ if ($user) {
   $user->setValid($valid);
   $user->save();
   
-  echo $valid ? 'success' : 'failed';
+  if ($valid) {
+    $rank = $user->refreshRank();
+  }
+  
+  echo $valid ? $rank : 'failed';
 } else {
   echo 'failed';
 }

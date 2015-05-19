@@ -24,7 +24,7 @@ $end_entry = min(array($total, $current_page*$settings['backend_per_page']));
       <tr role="row">
         <th>Username</th>
         <th>isValid?</th>
-<!--        <th>Created at</th>-->
+        <th>Rank</th>
         <th>Last refresh</th>
         <th>Last used</th>
         <th><?php i18n_echo(array('en' => 'Actions', 'zh' => '操作')) ?></th>
@@ -36,7 +36,7 @@ $end_entry = min(array($total, $current_page*$settings['backend_per_page']));
       <td><?php echo $user->getUsername(); ?></td>
       <td class="isValid"><i class="fa <?php if ($user->getValid()): ?>fa-check<?php else: ?>fa-times<?php endif; ?>"></i></td>
       
-      <!--<td><?php echo $user->getCreated('Y-m-d'); ?></td>-->
+      <td class="rank"><?php echo $user->getRank(); ?></td>
       <td><?php echo $user->getLastSuccessCookieRefresh() ? time_ago($user->getLastSuccessCookieRefresh()) : 'N/A' ?></td>
       <td><?php echo $user->getLastUsed() ? time_ago($user->getLastUsed()) : 'N/A' ?></td>
       <td class="actions">

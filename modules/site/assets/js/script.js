@@ -14,8 +14,9 @@ jQuery(function($){
       $('.validate a', tr). show();
       $('.validate .loading', tr).hide();
       
-      if (data == 'success') {
+      if (data != 'failed') {
         $('.isValid i', tr).removeClass('fa-times').addClass('fa-check');
+        $('.rank', tr).html(data);
       } else {
         $('.isValid i', tr).removeClass('fa-check').addClass('fa-times');
       }

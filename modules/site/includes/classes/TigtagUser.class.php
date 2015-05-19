@@ -78,6 +78,12 @@ class TigtagUser extends DBObject {
     }
     return $this->getDbFieldLast_used();
   }
+  public function setRank($r) {
+    $this->setDbFieldRank($r);
+  }
+  public function getRank() {
+    return $this->getDbFieldRank();
+  }
   
   /**
    * self functions
@@ -304,5 +310,23 @@ COLLATE = utf8_general_ci;
     $dom->clear();
     
     // get seccode
+  }
+  
+  public function refreshRank() {
+    $crawler = new Crawler();
+    $crawler->setCookiePath($this->getCookiePath());
+//    $crawler->setUseTor();
+    
+    $html = $crawler->read("http://bbs.tigtag.com/home.php?mod=space&do=pm");
+    $matches = array();
+    $keyword = iconv('UTF8', 'GBK', '积分');
+    preg_match('/'.$keyword.'[^\d]+(\d+)/', $html, $matches);
+    if (isset($matches[1])) {
+      $this->setRank($matches[1]);
+      $this->save();
+      return $matches[1];
+    }
+    
+    return null;
   }
 }

@@ -134,6 +134,9 @@ $html = $crawler->read("http://bbs.tigtag.com/misc.php?mod=secqaa&action=update&
     echo "Success!\n";
     echo iconv('GBK', 'UTF-8', $html);
     echo "\n";
+    
+    $user->refreshRank();
+    
   } else {
     $msg = 'Error when doing post reply. User is #' . $user->getId() . ' - ' . $user->getUsername() . ' == ' . (isset($secanswer) ? "<p>Secquestion: ".htmlentities($secquestion)."<br />Secanswer: $secanswer</p>" : "") . (iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : $html);
 //    $log = new Log('cron', Log::ERROR, $msg);

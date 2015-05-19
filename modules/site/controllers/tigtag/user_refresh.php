@@ -19,7 +19,7 @@ if ($user) {
     
     $crawler = new Crawler();
     $crawler->setCookiePath($user->getCookiePath());
-    $crawler->setUseTor();
+//    $crawler->setUseTor();
     
     $html = $crawler->post($url, $post_data);
     
@@ -58,7 +58,7 @@ if ($user) {
   $crawler = new Crawler();
   $crawler->setCookiePath($user->getCookiePath());
   $crawler->clearCookie();
-  $crawler->setUseTor();
+//  $crawler->setUseTor();
   $html = $crawler->read('http://bbs.tigtag.com/member.php?mod=logging&action=login');
   load_library_simple_html_dom();
   // get vars from login page
