@@ -29,10 +29,10 @@ function sendemailAdmin($subject, $msg) {
     $mail->MsgHTML($msg);
     $mail->Send();
     
-    if (class_exists('Log')) {
-      $log = new Log('mail', Log::SUCCESS, 'Send email to admin');
-      $log->save();
-    }
+//    if (class_exists('Log')) {
+//      $log = new Log('mail', Log::SUCCESS, 'Send email to admin');
+//      $log->save();
+//    }
   } catch (phpmailerException $e) {
     $log = new Log('mail', Log::ERROR, 'Failed to send email: ' . $e->errorMessage());
     $log->save();
