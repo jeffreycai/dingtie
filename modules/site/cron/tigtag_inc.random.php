@@ -136,7 +136,7 @@ for ($counter = 0; $counter < 10; $counter++) {
 
                 echo "Success!\n";
                 echo iconv('GBK', 'UTF-8', $html);
-                sendemailAdmin('Dingtie: Success!', iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : 'sucess');
+//                sendemailAdmin('Dingtie: Success!', iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : 'sucess');
                 echo "\n";
 
                 $user->refreshRank();
