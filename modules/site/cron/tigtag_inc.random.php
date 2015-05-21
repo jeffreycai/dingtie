@@ -15,7 +15,7 @@ $settings = Vars::getSettings();
 $messages = $settings['dingtie_messages'];
 
 
-for ($counter = 0; $counter < 5; $counter++) {
+for ($counter = 0; $counter < 10; $counter++) {
             // get a valid user
             $user;
             if ($user = TigtagUser::getFirstValidUserWithMaxRank(150)) {
