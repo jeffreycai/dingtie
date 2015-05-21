@@ -17,7 +17,7 @@ $messages = $settings['dingtie_messages'];
 
 // get a valid user
 $user;
-if ($user = TigtagUser::getFirstValidUser()) {
+if ($user = TigtagUser::getFirstValidUserWithMaxRank(150)) {
 
   $user->setLastUsed(time());
   $user->save();

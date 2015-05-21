@@ -270,6 +270,21 @@ COLLATE = utf8_general_ci;
     return null;
   }
   
+  static function getFirstValidUserWithMaxRank($max_rank, $last_success_refresh_period = 29) {
+    // we only get user that succussfully refreshed in last xx days
+    $last_success_refresh_period = $last_success_refresh_period * 24 * 60 * 60;
+            
+    global $mysqli;
+    $query = "SELECT * FROM tigtag_user WHERE rank < $max_rank AND valid=1 AND (" . time() . " - last_success_cookie_refresh <= $last_success_refresh_period) ORDER BY last_used ASC, created ASC LIMIT 1";
+    $result = $mysqli->query($query);
+    if ($result && $t = $result->fetch_object()) {
+      $tigtag_user = new TigtagUser();
+      DBObject::importQueryResultToDbObject($t, $tigtag_user);
+      return $tigtag_user;
+    }
+    return null;
+  }
+  
   function validate() {
     $crawler = new Crawler();
     $crawler->setCookiePath($this->getCookiePath());
