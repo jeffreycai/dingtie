@@ -2,4 +2,4 @@
 $fid = 189;
 $tid = 3505486;
 
-require 'tigtag_inc.php';
+require __DIR__ . DS . 'tigtag_inc.php';

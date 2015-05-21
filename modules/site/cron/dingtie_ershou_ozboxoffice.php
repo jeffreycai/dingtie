@@ -4,4 +4,4 @@ $tid = 3507039;
 
 $alternative_message = '顶顶顶顶';
 
-require 'tigtag_inc.php';
+require __DIR__ . DS . 'tigtag_inc.php';

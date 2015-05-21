@@ -5,4 +5,4 @@ $tid = rand(3571411, 3581411);
 
 $alternative_message = '顶顶顶顶';
 
-require 'tigtag_inc.random.php';
+require __DIR__ . DS . 'tigtag_inc.random.php';

@@ -4,4 +4,4 @@ $tid = 3579007;
 
 $alternative_message = '谢谢捧场！';
 
-require 'debug_tigtag_inc.php';
+require __DIR__ . DS . 'debug_tigtag_inc.php';
