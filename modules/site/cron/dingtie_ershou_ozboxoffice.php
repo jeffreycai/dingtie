@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/../../../bootstrap.php';
+
 $fid = 49;
 $tid = 3507039;
 

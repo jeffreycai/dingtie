@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../../../bootstrap.php';
+
 $fid = "";
 $tid = rand(3571411, 3581411);
 
