@@ -131,7 +131,13 @@ abstract class DBObject {
 
     // update auto increase id as primary key
     if (!$is_update && sizeof($this->primary_key) == 1 && $this->pk_auto_increased) {
-      $id = $this->primary_key[0];
+      $id = array_pop($this->primary_key);
+      $this->{"db_field_" . $id} = $mysqli->insert_id;
+    }
+    
+    // update auto increase id, but when it is not primary key
+    if (!$is_update && !in_array('id', $this->primary_key) && $this->pk_auto_increased) {
+      $id = array_pop($this->primary_key);
       $this->{"db_field_" . $id} = $mysqli->insert_id;
     }
     return $result;
@@ -245,7 +251,7 @@ abstract class DBObject {
    */
   static function importQueryResultToDbObject(stdClass &$result, DBObject &$object) {
     foreach (get_object_vars($result) as $key => $val) {
-      $object->{'db_field_' . $key} = $val;
+      $object->{'db_field_' . strtolower($key)} = $val;
     }
   }
   

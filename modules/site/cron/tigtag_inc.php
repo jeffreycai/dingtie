@@ -25,7 +25,7 @@ if ($user = TigtagUser::getFirstValidUser()) {
   // first request to get formhash
   $crawler = new Crawler();
   $crawler->setCookiePath($user->getCookiePath());
-//  $crawler->setUseTor();
+  $crawler->setUseTor();
   $crawler->setHeader(array(
       'Referer: http://bbs.tigtag.com/forum.php?mod=viewthread&tid=3160720&pid=31999233',
   ));
@@ -110,7 +110,7 @@ $html = $crawler->read("http://bbs.tigtag.com/misc.php?mod=secqaa&action=update&
   }
   $message = urlencode(iconv('UTF-8', 'GBK', $message));
   
-  $data = "message=$message".( (isset($secanswer) && isset($sechash)) ? "&sechash=$sechash&secanswer=$secanswer" : '')."&secanswer=$secanswer&posttime=$time&formhash=$formhash&usesig=1&subject=++";
+  $data = "message=$message".( (isset($secanswer) && isset($sechash)) ? "&sechash=$sechash&secanswer=$secanswer" : '')."&posttime=$time&formhash=$formhash&usesig=1&subject=++";
 
   $crawler->setHeader(array(
       'Referer: http://bbs.tigtag.com/thread-' . $tid . '-1-1.html',

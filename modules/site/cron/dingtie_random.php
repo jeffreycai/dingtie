@@ -1,7 +1,7 @@
 <?php
 
-$fid = 172;
-$tid = 3573809;
+$fid = "";
+$tid = rand(3571411, 3581411);
 
 $alternative_message = '顶顶顶顶';
 
