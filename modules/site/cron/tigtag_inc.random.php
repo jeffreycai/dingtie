@@ -73,7 +73,7 @@ for ($counter = 0; $counter < 10; $counter++) {
                       $msg = 'Error when doing secqaa code verification. $html = ' . htmlentities($html);
                       $log = new Log('cron', Log::ERROR, $msg);
                       $log->save();
-                      sendemailAdmin('Dingtie: Error', $msg);
+//                      sendemailAdmin('Dingtie: Error', $msg);
                     } else {
                       $secanswer = $result;
                       $sechash = $secqaa_code;
@@ -90,7 +90,9 @@ for ($counter = 0; $counter < 10; $counter++) {
                 } // end for
                 if ($secverification_success == false) {
                   echo "Error - math verification failed.\n";
-                  sendemailAdmin('Dingtie: Error - math verification failed. ', 'Tried 7 times but still failed');
+                    $log = new Log('cron', Log::ERROR, "Error - math verification failed.");
+                    $log->save();
+//                  sendemailAdmin('Dingtie: Error - math verification failed. ', 'Tried 7 times but still failed');
                   exit;
                 }
               }
@@ -125,11 +127,11 @@ for ($counter = 0; $counter < 10; $counter++) {
 
                 if (strstr(iconv('GBK', 'UTF-8', $html), '审核')) {
                   $msg = 'Notice when doing post replay for user #' . $user->getId() . ' - ' . $user->getUsername() . ' == ' . iconv('GBK', 'UTF-8', $html);
-            //      $log = new Log('cron', Log::NOTICE, $msg);
-            //      $log->save();
+                  $log = new Log('cron', Log::NOTICE, $msg);
+                  $log->save();
 
                   echo "= Notice: Tigtag requires review.\n\n";
-                  sendemailAdmin('Dingtie: Notice - requires review', $msg);
+//                  sendemailAdmin('Dingtie: Notice - requires review', $msg);
                 }
 
                 echo "Success!\n";
@@ -140,18 +142,18 @@ for ($counter = 0; $counter < 10; $counter++) {
 
               } else {
                 $msg = 'Error when doing post reply. User is #' . $user->getId() . ' - ' . $user->getUsername() . ' == ' . (isset($secanswer) ? "<p>Secquestion: ".htmlentities($secquestion)."<br />Secanswer: $secanswer</p>" : "") . (iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : $html);
-            //    $log = new Log('cron', Log::ERROR, $msg);
-            //    $log->save();
+                $log = new Log('cron', Log::ERROR, $msg);
+                $log->save();
 
                 echo "Failed.. \n";
                 echo (iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : $html);
                 echo "\n";
-                sendemailAdmin('Dingtie: Error', $msg);
+//                sendemailAdmin('Dingtie: Error', $msg);
               }
             } else {
               $msg = 'Error when doing post reply. no valid user available';
-            //  $log = new Log('cron', Log::ERROR, $msg);
-            //  $log->save();
+              $log = new Log('cron', Log::ERROR, $msg);
+              $log->save();
 
               echo "Error: no valid user available";
               echo "\n";
