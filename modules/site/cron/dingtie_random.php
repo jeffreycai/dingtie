@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-
+die(date('Y-md-d H:i:s'));
 
 for ($i = 0; $i < 15; $i++) {
   $fid = "";
