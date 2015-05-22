@@ -294,13 +294,15 @@ COLLATE = utf8_general_ci;
     return $valid;
   }
   
-  function login() {
+  function login($usertor = true) {
     $this->clearCookie();
     
     // prepare crawler
     $crawler = new Crawler();
     $crawler->setCookiePath($this->getCookiePath());
-    $crawler->setUseTor();
+    if ($usertor) {
+      $crawler->setUseTor();
+    }
     
     // crawl
     $html = $crawler->read('http://bbs.tigtag.com/member.php?mod=logging&action=login');
@@ -327,10 +329,12 @@ COLLATE = utf8_general_ci;
     // get seccode
   }
   
-  public function refreshRank() {
+  public function refreshRank($usertor = true) {
     $crawler = new Crawler();
     $crawler->setCookiePath($this->getCookiePath());
-//    $crawler->setUseTor();
+    if ($usertor) {
+      $crawler->setUseTor();
+    }
     
     $html = $crawler->read("http://bbs.tigtag.com/home.php?mod=space&do=pm");
     $matches = array();

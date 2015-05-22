@@ -26,7 +26,7 @@ if ($user = TigtagUser::getFirstValidUserWithMaxRank(150)) {
   // first request to get formhash
   $crawler = new Crawler();
   $crawler->setCookiePath($user->getCookiePath());
-//  $crawler->setUseTor();
+  $crawler->setUseTor();
   $crawler->setHeader(array(
       'Referer: http://bbs.tigtag.com/forum.php?mod=viewthread&tid=3160720&pid=31999233',
   ));
@@ -139,7 +139,7 @@ $html = $crawler->read("http://bbs.tigtag.com/misc.php?mod=secqaa&action=update&
 //                sendemailAdmin('Dingtie: Success!', iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : 'sucess');
     echo "\n";
 
-    $user->refreshRank();
+    $user->refreshRank(false);
 
   } else {
     $msg = 'Error when doing post reply. User is #' . $user->getId() . ' - ' . $user->getUsername() . ' == ' . (isset($secanswer) ? "<p>Secquestion: ".htmlentities($secquestion)."<br />Secanswer: $secanswer</p>" : "") . (iconv('GBK', 'UTF-8', $html) ? iconv('GBK', 'UTF-8', $html) : $html);

@@ -9,7 +9,7 @@ if ($user) {
   $user->save();
   
   if ($valid) {
-    $rank = $user->refreshRank();
+    $rank = $user->refreshRank(false);
   }
   
   echo $valid ? $rank : 'failed';
