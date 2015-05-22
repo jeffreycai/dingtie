@@ -6,6 +6,12 @@ if (!preg_match('/^\d+$/', $page)) {
 }
 $settings = Vars::getSettings();
 
+
+$orderby = isset($_GET['orderby']) ? strip_tags($_GET['orderby']) : 'last_success_cookie_refresh';
+$order = isset($_GET['order']) ? strip_tags($_GET['order']) : 'ASC';
+
+
+
 $html = new HTML();
 
 $html->renderOut('core/backend/html_header', array(
@@ -18,7 +24,7 @@ $html->renderOut('core/backend/header');
 $total = TigtagUser::countAll();
 $total_page = ceil($total / $settings['backend_per_page']);
 $html->renderOut('site/tigtag/user_list', array(
-    'users' => TigtagUser::findAllWithPage($page, $settings['backend_per_page']),
+    'users' => TigtagUser::findAllWithPage($page, $settings['backend_per_page'], $orderby, $order),
     'current_page' => $page,
     'total_page' => $total_page,
     'total' => $total,

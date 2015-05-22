@@ -22,11 +22,26 @@ $end_entry = min(array($total, $current_page*$settings['backend_per_page']));
 <table class="table table-striped table-bordered table-hover dataTable no-footer">
   <thead>
       <tr role="row">
-        <th>Username</th>
-        <th>isValid?</th>
-        <th>Rank</th>
-        <th>Last refresh</th>
-        <th>Last used</th>
+        <th><a href="<?php echo update_query_string(array(
+            'orderby' => 'username',
+            'order' => isset($_GET['order']) && $_GET['order'] == 'ASC' ? 'DESC' : 'ASC'
+        )) ?>">Username <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'username' ? ($_GET['order'] == 'ASC' ? '<span class="fa fa-sort-asc"></span>' : '<span class="fa fa-sort-desc"></span>') : "" ?></a></th>
+        <th><a href="<?php echo update_query_string(array(
+            'orderby' => 'valid',
+            'order' => isset($_GET['order']) && $_GET['order'] == 'ASC' ? 'DESC' : 'ASC'
+        )) ?>">isValid? <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'valid' ? ($_GET['order'] == 'ASC' ? '<span class="fa fa-sort-asc"></span>' : '<span class="fa fa-sort-desc"></span>') : "" ?></a></th>
+        <th><a href="<?php echo update_query_string(array(
+            'orderby' => 'rank',
+            'order' => isset($_GET['order']) && $_GET['order'] == 'ASC' ? 'DESC' : 'ASC'
+        )) ?>">Rank <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'rank' ? ($_GET['order'] == 'ASC' ? '<span class="fa fa-sort-asc"></span>' : '<span class="fa fa-sort-desc"></span>') : "" ?></a></th>
+        <th><a href="<?php echo update_query_string(array(
+            'orderby' => 'last_success_cookie_refresh',
+            'order' => isset($_GET['order']) && $_GET['order'] == 'ASC' ? 'DESC' : 'ASC'
+        )) ?>">Last refreshed <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'last_success_cookie_refresh' ? ($_GET['order'] == 'ASC' ? '<span class="fa fa-sort-asc"></span>' : '<span class="fa fa-sort-desc"></span>') : "" ?></a></th>
+        <th><a href="<?php echo update_query_string(array(
+            'orderby' => 'last_used',
+            'order' => isset($_GET['order']) && $_GET['order'] == 'ASC' ? 'DESC' : 'ASC'
+        )) ?>">Last used <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'last_used' ? ($_GET['order'] == 'ASC' ? '<span class="fa fa-sort-asc"></span>' : '<span class="fa fa-sort-desc"></span>') : "" ?></a></th>
         <th><?php i18n_echo(array('en' => 'Actions', 'zh' => '操作')) ?></th>
       </tr>
   </thead>
