@@ -1,0 +1,22 @@
+routing:
+
+  admin_os_user_list:
+    path: ^\/admin\/os_user\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: oursteps/backend/os_user_list
+  admin_os_user_edit:
+    path: ^\/admin\/os_user\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: oursteps/backend/os_user_edit
+  admin_os_user_create:
+    path: ^\/admin\/os_user\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: oursteps/backend/os_user_create
+  admin_os_user_delete:
+    path: ^\/admin\/os_user\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: oursteps/backend/os_user_delete

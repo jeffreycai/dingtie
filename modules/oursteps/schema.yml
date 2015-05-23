@@ -1,0 +1,48 @@
+os_user:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    username: VARCHAR(25)
+    password: VARCHAR(16)
+    email: VARCHAR(128) NOT NULL
+    valid: TINYINT(1)
+    last_used: INT
+    last_success_cookie_refresh: INT
+    registered_at: INT
+    rank: VARCHAR(4)
+  form:
+    fields:
+      username:
+        widget: text
+        widget_conf:
+          required: 1
+      password:
+        widget: text
+        widget_conf:
+          required: 1
+      email:
+        widget: text
+        widget_conf:
+          required: 1
+      valid:
+        widget: checkbox_single
+        widget_conf: 
+      last_used:
+        widget: text
+        widget_conf:
+          required: 0
+      last_success_cookie_refresh:
+        widget: text
+        widget_conf:
+          required: 0
+      registered_at:
+        widget: text
+        widget_conf:
+          required: 0
+      rank:
+        widget: text
+        widget_conf:
+          required: 0
+    names:
+      en: "Oursteps user"
+      zh: 新足迹用户

@@ -18,6 +18,11 @@ $end_entry = min(array($total, $current_page*$settings['log']['backend_per_page'
           
         <?php echo Message::renderMessages(); ?>
           
+          <div>
+            <a href="<?php echo uri('admin/log/empty', false) ?>" onclick="return confirm('Empty whole log?');">Empty log</a>
+            <br />
+          </div>
+          
 <table class="table table-striped table-bordered table-hover dataTable no-footer">
   <thead>
       <tr role="row">

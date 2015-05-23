@@ -27,3 +27,79 @@ st_user:
     names:
       en: "SydneyToday User"
       zh: "今日悉尼用户"
+
+st_zhekou:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    title: VARCHAR(512)
+    email: VARCHAR(50)
+    editpwd: VARCHAR(20)
+    sortid: VARCHAR(2)
+    my_expressurl: VARCHAR(1024)
+    content: TEXT
+    outurl1: VARCHAR(512)
+    outurl2: VARCHAR(512)
+    outurl3: VARCHAR(512)
+    outurl4: VARCHAR(512)
+    outurl5: VARCHAR(512)
+    outurl6: VARCHAR(512)
+    outurl7: VARCHAR(512)
+    outurl8: VARCHAR(512)
+  form:
+    fields:
+      title:
+        widget: text
+        widget_conf:
+          required: 0
+      email:
+        widget: text
+        widget_conf:
+          required: 0
+      editpwd:
+        widget: text
+        widget_conf:
+          required: 0
+      sortid:
+        widget: text
+        widget_conf:
+          required: 0
+      content:
+        widget: textarea
+        widget_conf:
+          required: 0
+      outurl1:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl2:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl3:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl4:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl5:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl6:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl7:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl8:
+        widget: text
+        widget_conf:
+          required: 0
+    names:
+      en: "SydneyToday Zhekou"
+      zh: "今日悉尼 - zhekou"

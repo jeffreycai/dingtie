@@ -165,4 +165,10 @@ COLLATE = utf8_general_ci;
     $this->setIp($ip);
     $this->setTime($time == null ? time() : $time);
   }
+  
+  static function truncate() {
+    global $mysqli;
+    $query = "TRUNCATE TABLE log";
+    return $mysqli->query($query);
+  }
 }

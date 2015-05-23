@@ -18,6 +18,7 @@ if (isset($custom_modules)) {
       'crawler',
       'site',
       'sydneytoday',
+      'oursteps',
       'mail'
   );
 

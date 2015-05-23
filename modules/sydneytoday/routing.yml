@@ -20,3 +20,24 @@ routing:
     isSecure: 1
     i18n: 0
     controller: sydneytoday/backend/st_user_delete
+
+  admin_st_zhekou_list:
+    path: ^\/admin\/st_zhekou\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zhekou_list
+  admin_st_zhekou_edit:
+    path: ^\/admin\/st_zhekou\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zhekou_edit
+  admin_st_zhekou_create:
+    path: ^\/admin\/st_zhekou\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zhekou_create
+  admin_st_zhekou_delete:
+    path: ^\/admin\/st_zhekou\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: sydneytoday/backend/st_zhekou_delete

@@ -285,11 +285,19 @@ COLLATE = utf8_general_ci;
     return null;
   }
   
-  function validate() {
+  function validate($usetor = false) {
     $crawler = new Crawler();
+    if ($usetor) {
+      $crawler->setUseTor();
+    }
     $crawler->setCookiePath($this->getCookiePath());
     $html = $crawler->read('http://bbs.tigtag.com/member.php?mod=logging&action=login');
     $valid = strpos($html, '<div id="messagetext" class="alert_right">') ? true : false;
+    if ($valid) {
+      if (strpos($html, iconv('UTF-8', 'GBK', '禁止访问'))) {
+        $valid = false;
+      }
+    }
     //_debug(htmlspecialchars(iconv('GBK', 'UTF-8', $html)));
     return $valid;
   }
