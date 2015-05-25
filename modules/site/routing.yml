@@ -35,6 +35,11 @@ routing:
     isSecure: 1
     i18n: 0
     controller: site/tigtag/user_delete
+  tigtag_user_switch:
+    path: ^\/admin\/tigtag\/user\/switch\/(\d+)$
+    isSecure: 1
+    i18n: 0
+    controller: site/tigtag/user_switch
     
     
 assets:

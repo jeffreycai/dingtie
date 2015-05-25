@@ -50,4 +50,31 @@ jQuery(function($){
     }
   });
 
+
+  // Tigtag user switch
+  $('.tigtag .switch a').click(function(event){
+    event.preventDefault();
+    
+    var tr = $(this).parents('tr').first();
+    var uid = tr.attr('id').split("_");
+    uid = uid[1];
+
+    $(this).hide();
+    $('.switch .loading', tr).show();
+    
+    $.get('/admin/tigtag/user/switch/' + uid, function(data){
+      $('.switch a', tr). show();
+      $('.switch .loading', tr).hide();
+      
+      if (data != 'failed') {
+        if (data == 1) {
+          $('.isValid i', tr).removeClass('fa-times').addClass('fa-check');
+        } else {
+          $('.isValid i', tr).removeClass('fa-check').addClass('fa-times');
+        }
+      } else {
+        alert('Switch user action failed');
+      }
+    });
+  });
 });

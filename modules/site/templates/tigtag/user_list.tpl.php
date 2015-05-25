@@ -66,6 +66,10 @@ $end_entry = min(array($total, $current_page*$settings['backend_per_page']));
           <a title="delete" href="#"><i class="fa fa-times"></i></a>
           <i class="loading fa fa-spinner fa-spin"></i>
         </span>
+        <span class="switch">
+          <a title="switch" href="#"><i class="fa fa-lock"></i></a>
+          <i class="loading fa fa-spinner fa-spin"></i>
+        </span>
       </td>
     </tr>
     <?php endforeach; ?>
