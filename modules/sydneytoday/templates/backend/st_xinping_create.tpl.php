@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <h1 class="page-header"><?php i18n_echo(array(
-        'en' => 'SydneyToday Zhekou',
-        'zh' => '今日悉尼 - zhekou',
+        'en' => 'SydneyToday Xinping',
+        'zh' => '今日悉尼 - 新品',
       )); ?></h1>
     </div>
   </div>
@@ -19,7 +19,7 @@
           
         <?php echo Message::renderMessages(); ?>
           
-<form role="form" method="POST" action="<?php echo uri('admin/st_zhekou/create') ?>">
+<form role="form" method="POST" action="<?php echo uri('admin/st_xinping/create') ?>">
   
 <div class='form-group'>
   <label for='title'>title</label>
@@ -37,19 +37,35 @@
 </div>
   
 <div class='form-group'>
-  <label>sortid</label>
-    <select class='form-control' id='sortid' name='sortid'>
-      <option value='1' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '1' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "1" ? "selected='selected'" : "")) ?>>免费 / Sample</option>
-      <option value='2' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '2' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "2" ? "selected='selected'" : "")) ?>>时尚 / 美妆</option>
-      <option value='3' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '3' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "3" ? "selected='selected'" : "")) ?>>美食 / 旅游</option>
-      <option value='4' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '4' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "4" ? "selected='selected'" : "")) ?>>电子 / 科技</option>
-      <option value='5' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '5' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "5" ? "selected='selected'" : "")) ?>>其他</option>
+  <label>jiaoyifangshi</label>
+    <select class='form-control' id='jiaoyifangshi' name='jiaoyifangshi'>
+      <option value='出售' <?php echo ($object->isNew() ? (isset($_POST['jiaoyifangshi']) ? ($_POST['jiaoyifangshi'] == '出售' ? 'selected="selected"' : '') : '') : ($object->getJiaoyifangshi() == "出售" ? "selected='selected'" : "")) ?>>出售</option>
+      <option value='求购' <?php echo ($object->isNew() ? (isset($_POST['jiaoyifangshi']) ? ($_POST['jiaoyifangshi'] == '求购' ? 'selected="selected"' : '') : '') : ($object->getJiaoyifangshi() == "求购" ? "selected='selected'" : "")) ?>>求购</option>
     </select>
 </div>
   
 <div class='form-group'>
-  <label for='my_expressurl'>my_expressurl</label>
-  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['my_expressurl']) ? strip_tags($_POST['my_expressurl']) : '') : $object->getMyExpressurl()))) ?>' type='text' class='form-control' id='my_expressurl' name='my_expressurl' />
+  <label>shifousonghuo</label>
+    <select class='form-control' id='shifousonghuo' name='shifousonghuo'>
+      <option value='是' <?php echo ($object->isNew() ? (isset($_POST['shifousonghuo']) ? ($_POST['shifousonghuo'] == '是' ? 'selected="selected"' : '') : '') : ($object->getShifousonghuo() == "是" ? "selected='selected'" : "")) ?>>是</option>
+      <option value='否' <?php echo ($object->isNew() ? (isset($_POST['shifousonghuo']) ? ($_POST['shifousonghuo'] == '否' ? 'selected="selected"' : '') : '') : ($object->getShifousonghuo() == "否" ? "selected='selected'" : "")) ?>>否</option>
+    </select>
+</div>
+  
+<div class='form-group'>
+  <label>chanpingfenlei</label>
+    <select class='form-control' id='chanpingfenlei' name='chanpingfenlei'>
+      <option value='家居用品' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '家居用品' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "家居用品" ? "selected='selected'" : "")) ?>>家居用品</option>
+      <option value='家电/电脑' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '家电/电脑' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "家电/电脑" ? "selected='selected'" : "")) ?>>家电/电脑</option>
+      <option value='手机及配件' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '手机及配件' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "手机及配件" ? "selected='selected'" : "")) ?>>手机及配件</option>
+      <option value='服装饰品' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '服装饰品' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "服装饰品" ? "selected='selected'" : "")) ?>>服装饰品</option>
+      <option value='美容护肤' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '美容护肤' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "美容护肤" ? "selected='selected'" : "")) ?>>美容护肤</option>
+      <option value='烟酒食品' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '烟酒食品' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "烟酒食品" ? "selected='selected'" : "")) ?>>烟酒食品</option>
+      <option value='游戏娱乐' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '游戏娱乐' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "游戏娱乐" ? "selected='selected'" : "")) ?>>游戏娱乐</option>
+      <option value='汽车及配件' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '汽车及配件' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "汽车及配件" ? "selected='selected'" : "")) ?>>汽车及配件</option>
+      <option value='成人用品' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '成人用品' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "成人用品" ? "selected='selected'" : "")) ?>>成人用品</option>
+      <option value='其它' <?php echo ($object->isNew() ? (isset($_POST['chanpingfenlei']) ? ($_POST['chanpingfenlei'] == '其它' ? 'selected="selected"' : '') : '') : ($object->getChanpingfenlei() == "其它" ? "selected='selected'" : "")) ?>>其它</option>
+    </select>
 </div>
   
 <div class='form-group'>

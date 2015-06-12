@@ -7,8 +7,9 @@ include_once MODULESROOT . DS . 'core' . DS . 'includes' . DS . 'classes' . DS .
  * - title
  * - email
  * - editpwd
- * - sortid
- * - my_expressurl
+ * - jiaoyifangshi
+ * - shifousonghuo
+ * - chanpingfenlei
  * - content
  * - outurl1
  * - outurl2
@@ -21,7 +22,7 @@ include_once MODULESROOT . DS . 'core' . DS . 'includes' . DS . 'classes' . DS .
  * - fid
  * - post_id
  */
-class BaseStZhekou extends DBObject {
+class BaseStXinping extends DBObject {
   /**
    * Implement parent abstract functions
    */
@@ -34,7 +35,7 @@ class BaseStZhekou extends DBObject {
     $this->pk_auto_increased = TRUE;
   }
   protected function setTableName() {
-    $this->table_name = 'st_zhekou';
+    $this->table_name = 'st_xinping';
   }
   
   /**
@@ -64,17 +65,23 @@ class BaseStZhekou extends DBObject {
    public function getEditpwd() {
      return $this->getDbFieldEditpwd();
    }
-   public function setSortid($var) {
-     $this->setDbFieldSortid($var);
+   public function setJiaoyifangshi($var) {
+     $this->setDbFieldJiaoyifangshi($var);
    }
-   public function getSortid() {
-     return $this->getDbFieldSortid();
+   public function getJiaoyifangshi() {
+     return $this->getDbFieldJiaoyifangshi();
    }
-   public function setMyExpressurl($var) {
-     $this->setDbFieldMy_expressurl($var);
+   public function setShifousonghuo($var) {
+     $this->setDbFieldShifousonghuo($var);
    }
-   public function getMyExpressurl() {
-     return $this->getDbFieldMy_expressurl();
+   public function getShifousonghuo() {
+     return $this->getDbFieldShifousonghuo();
+   }
+   public function setChanpingfenlei($var) {
+     $this->setDbFieldChanpingfenlei($var);
+   }
+   public function getChanpingfenlei() {
+     return $this->getDbFieldChanpingfenlei();
    }
    public function setContent($var) {
      $this->setDbFieldContent($var);
@@ -149,11 +156,11 @@ class BaseStZhekou extends DBObject {
    * self functions
    */
   static function dropTable() {
-    return parent::dropTableByName('st_zhekou');
+    return parent::dropTableByName('st_xinping');
   }
   
   static function tableExist() {
-    return parent::tableExistByName('st_zhekou');
+    return parent::tableExistByName('st_xinping');
   }
   
   static function createTableIfNotExist() {
@@ -161,13 +168,14 @@ class BaseStZhekou extends DBObject {
 
     if (!self::tableExist()) {
       return $mysqli->query('
-CREATE TABLE IF NOT EXISTS `st_zhekou` (
+CREATE TABLE IF NOT EXISTS `st_xinping` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(512) ,
   `email` VARCHAR(50) ,
   `editpwd` VARCHAR(20) ,
-  `sortid` VARCHAR(2) ,
-  `my_expressurl` VARCHAR(1024) ,
+  `jiaoyifangshi` VARCHAR(6) ,
+  `shifousonghuo` VARCHAR(4) ,
+  `chanpingfenlei` VARCHAR(16) ,
   `content` TEXT ,
   `outurl1` VARCHAR(512) ,
   `outurl2` VARCHAR(512) ,
@@ -190,9 +198,9 @@ COLLATE = utf8_general_ci;
     return true;
   }
   
-  static function findById($id, $instance = 'StZhekou') {
+  static function findById($id, $instance = 'StXinping') {
     global $mysqli;
-    $query = 'SELECT * FROM st_zhekou WHERE id=' . $id;
+    $query = 'SELECT * FROM st_xinping WHERE id=' . $id;
     $result = $mysqli->query($query);
     if ($result && $b = $result->fetch_object()) {
       $obj = new $instance();
@@ -204,12 +212,12 @@ COLLATE = utf8_general_ci;
   
   static function findAll() {
     global $mysqli;
-    $query = "SELECT * FROM st_zhekou";
+    $query = "SELECT * FROM st_xinping";
     $result = $mysqli->query($query);
     
     $rtn = array();
     while ($result && $b = $result->fetch_object()) {
-      $obj= new StZhekou();
+      $obj= new StXinping();
       DBObject::importQueryResultToDbObject($b, $obj);
       $rtn[] = $obj;
     }
@@ -219,12 +227,12 @@ COLLATE = utf8_general_ci;
   
   static function findAllWithPage($page, $entries_per_page) {
     global $mysqli;
-    $query = "SELECT * FROM st_zhekou LIMIT " . ($page - 1) * $entries_per_page . ", " . $entries_per_page;
+    $query = "SELECT * FROM st_xinping LIMIT " . ($page - 1) * $entries_per_page . ", " . $entries_per_page;
     $result = $mysqli->query($query);
     
     $rtn = array();
     while ($result && $b = $result->fetch_object()) {
-      $obj= new StZhekou();
+      $obj= new StXinping();
       DBObject::importQueryResultToDbObject($b, $obj);
       $rtn[] = $obj;
     }
@@ -234,7 +242,7 @@ COLLATE = utf8_general_ci;
   
   static function countAll() {
     global $mysqli;
-    $query = "SELECT COUNT(*) as 'count' FROM st_zhekou";
+    $query = "SELECT COUNT(*) as 'count' FROM st_xinping";
     if ($result = $mysqli->query($query)) {
       return $result->fetch_object()->count;
     }
@@ -242,7 +250,7 @@ COLLATE = utf8_general_ci;
   
   static function truncate() {
     global $mysqli;
-    $query = "TRUNCATE TABLE st_zhekou";
+    $query = "TRUNCATE TABLE st_xinping";
     return $mysqli->query($query);
   }
 }

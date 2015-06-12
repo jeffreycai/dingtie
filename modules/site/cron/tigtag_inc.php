@@ -48,7 +48,7 @@ if ($user = TigtagUser::getFirstValidUser()) {
     
     // do math seccode verification, try for 5 times
     $secverification_success = false;
-    for ($i = 0; $i < 7; $i++) {
+    for ($i = 0; $i < 10; $i++) {
 $html = $crawler->read("http://bbs.tigtag.com/misc.php?mod=secqaa&action=update&idhash=$secqaa_code&inajax=1&ajaxtarget=secqaa_$secqaa_code");
       $html = iconv('GBK', 'UTF-8', $html);
       $secquestion = $html;

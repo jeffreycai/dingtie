@@ -22,7 +22,7 @@ if ($now > strtotime(date('Y-m-d 10:10:00')) && $now < strtotime(date('Y-m-d 19:
   }
   
   
-  for ($ccc = 25; $ccc < 45; $ccc++) {
+  for ($ccc = 25; $ccc < 35; $ccc++) {
 echo "\n-------------  $ccc  -------------\n";
     $fid = "";
     $tid = $tids[$ccc];

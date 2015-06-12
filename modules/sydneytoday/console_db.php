@@ -29,3 +29,18 @@
   echo StZhekou::createTableIfNotExist() ? "success\n" : "fail\n";
   }
   
+  //-- StXinping:Clear cache
+  if ($command == "cc") {
+    if ($arg1 == "all" || $arg1 == "sydneytoday") {
+      echo " - Drop table 'st_xinping' ";
+      echo StXinping::dropTable() ? "success\n" : "fail\n";
+    }
+  }
+
+  //-- StXinping:Import DB
+  if ($command == "import" && $arg1 == "db" && (is_null($arg2) || $arg2 == "st_xinping") ) {
+  //- create tables if not exits
+  echo " - Create table 'st_xinping' ";
+  echo StXinping::createTableIfNotExist() ? "success\n" : "fail\n";
+  }
+  

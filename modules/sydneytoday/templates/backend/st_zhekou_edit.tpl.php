@@ -37,8 +37,19 @@
 </div>
   
 <div class='form-group'>
-  <label for='sortid'>sortid</label>
-  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['sortid']) ? strip_tags($_POST['sortid']) : '') : $object->getSortid()))) ?>' type='text' class='form-control' id='sortid' name='sortid' />
+  <label>sortid</label>
+    <select class='form-control' id='sortid' name='sortid'>
+      <option value='1' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '1' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "1" ? "selected='selected'" : "")) ?>>免费 / Sample</option>
+      <option value='2' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '2' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "2" ? "selected='selected'" : "")) ?>>时尚 / 美妆</option>
+      <option value='3' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '3' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "3" ? "selected='selected'" : "")) ?>>美食 / 旅游</option>
+      <option value='4' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '4' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "4" ? "selected='selected'" : "")) ?>>电子 / 科技</option>
+      <option value='5' <?php echo ($object->isNew() ? (isset($_POST['sortid']) ? ($_POST['sortid'] == '5' ? 'selected="selected"' : '') : '') : ($object->getSortid() == "5" ? "selected='selected'" : "")) ?>>其他</option>
+    </select>
+</div>
+  
+<div class='form-group'>
+  <label for='my_expressurl'>my_expressurl</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['my_expressurl']) ? strip_tags($_POST['my_expressurl']) : '') : $object->getMyExpressurl()))) ?>' type='text' class='form-control' id='my_expressurl' name='my_expressurl' />
 </div>
   
 <div class='form-group'>
@@ -84,6 +95,16 @@
 <div class='form-group'>
   <label for='outurl8'>outurl8</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['outurl8']) ? strip_tags($_POST['outurl8']) : '') : $object->getOuturl8()))) ?>' type='text' class='form-control' id='outurl8' name='outurl8' />
+</div>
+  
+<div class='form-group'>
+  <label for='fid'>fid</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['fid']) ? strip_tags($_POST['fid']) : '') : $object->getFid()))) ?>' type='text' class='form-control' id='fid' name='fid' />
+</div>
+  
+<div class='form-group'>
+  <label for='post_id'>post_id</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['post_id']) ? strip_tags($_POST['post_id']) : '') : $object->getPostId()))) ?>' type='text' class='form-control' id='post_id' name='post_id' />
 </div>
 
   <input type="submit" name="submit" value="<?php i18n_echo(array(

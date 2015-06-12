@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `os_user` (
   `last_used` INT ,
   `last_success_cookie_refresh` INT ,
   `registered_at` INT ,
-  `rank` VARCHAR(4) ,
+  `rank` VARCHAR(4) DEFAULT 0 ,
   PRIMARY KEY (`id`)
 )
 ENGINE = InnoDB

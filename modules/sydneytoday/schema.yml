@@ -46,6 +46,8 @@ st_zhekou:
     outurl6: VARCHAR(512)
     outurl7: VARCHAR(512)
     outurl8: VARCHAR(512)
+    fid: INT
+    post_id: INT
   form:
     fields:
       title:
@@ -61,6 +63,16 @@ st_zhekou:
         widget_conf:
           required: 0
       sortid:
+        widget: select
+        widget_conf:
+          required: 0
+          options:
+            1: "免费 / Sample"
+            2: "时尚 / 美妆"
+            3: "美食 / 旅游"
+            4: "电子 / 科技"
+            5: "其他"
+      my_expressurl:
         widget: text
         widget_conf:
           required: 0
@@ -100,6 +112,127 @@ st_zhekou:
         widget: text
         widget_conf:
           required: 0
+      fid:
+        widget: text
+        widget_conf:
+          required: 0
+      post_id:
+        widget: text
+        widget_conf:
+          required: 0
     names:
       en: "SydneyToday Zhekou"
-      zh: "今日悉尼 - zhekou"
+      zh: "今日悉尼 - 折扣"
+      
+      
+st_xinping:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    title: VARCHAR(512)
+    email: VARCHAR(50)
+    editpwd: VARCHAR(20)
+    jiaoyifangshi: VARCHAR(6)
+    shifousonghuo: VARCHAR(4)
+    chanpingfenlei: VARCHAR(16)
+    content: TEXT
+    outurl1: VARCHAR(512)
+    outurl2: VARCHAR(512)
+    outurl3: VARCHAR(512)
+    outurl4: VARCHAR(512)
+    outurl5: VARCHAR(512)
+    outurl6: VARCHAR(512)
+    outurl7: VARCHAR(512)
+    outurl8: VARCHAR(512)
+    fid: INT
+    post_id: INT
+  form:
+    fields:
+      title:
+        widget: text
+        widget_conf:
+          required: 0
+      email:
+        widget: text
+        widget_conf:
+          required: 0
+      editpwd:
+        widget: text
+        widget_conf:
+          required: 0
+      jiaoyifangshi:
+        widget: select
+        widget_conf:
+          required: 0
+          options:
+            "出售": "出售"
+            "求购": "求购"
+      shifousonghuo:
+        widget: select
+        widget_conf:
+          required: 0
+          options:
+            "是": "是"
+            "否": "否"
+      chanpingfenlei:
+        widget: select
+        widget_conf:
+          required: 0
+          options:
+            "家居用品": "家居用品"
+            "家电/电脑": "家电/电脑"
+            "手机及配件": "手机及配件"
+            "服装饰品": "服装饰品"
+            "美容护肤": "美容护肤"
+            "烟酒食品": "烟酒食品"
+            "游戏娱乐": "游戏娱乐"
+            "汽车及配件": "汽车及配件"
+            "成人用品": "成人用品"
+            "其它": "其它"
+      content:
+        widget: textarea
+        widget_conf:
+          required: 0
+      outurl1:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl2:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl3:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl4:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl5:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl6:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl7:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl8:
+        widget: text
+        widget_conf:
+          required: 0
+      fid:
+        widget: text
+        widget_conf:
+          required: 0
+      post_id:
+        widget: text
+        widget_conf:
+          required: 0
+    names:
+      en: "SydneyToday Xinping"
+      zh: "今日悉尼 - 新品"

@@ -20,6 +20,8 @@ if (isset($_POST['submit'])) {
   $editpwd = isset($_POST["editpwd"]) ? strip_tags($_POST["editpwd"]) : null;  
   // validation for $sortid
   $sortid = isset($_POST["sortid"]) ? strip_tags($_POST["sortid"]) : null;  
+  // validation for $my_expressurl
+  $my_expressurl = isset($_POST["my_expressurl"]) ? strip_tags($_POST["my_expressurl"]) : null;  
   // validation for $content
   $content = isset($_POST["content"]) ? $_POST["content"] : null;  
   // validation for $outurl1
@@ -37,7 +39,11 @@ if (isset($_POST['submit'])) {
   // validation for $outurl7
   $outurl7 = isset($_POST["outurl7"]) ? strip_tags($_POST["outurl7"]) : null;  
   // validation for $outurl8
-  $outurl8 = isset($_POST["outurl8"]) ? strip_tags($_POST["outurl8"]) : null;  /// proceed submission
+  $outurl8 = isset($_POST["outurl8"]) ? strip_tags($_POST["outurl8"]) : null;  
+  // validation for $fid
+  $fid = isset($_POST["fid"]) ? strip_tags($_POST["fid"]) : null;  
+  // validation for $post_id
+  $post_id = isset($_POST["post_id"]) ? strip_tags($_POST["post_id"]) : null;  /// proceed submission
   
   // proceed for $title
   $object->setTitle($title);
@@ -49,7 +55,12 @@ if (isset($_POST['submit'])) {
   $object->setEditpwd($editpwd);
   
   // proceed for $sortid
-  $object->setSortid($sortid);
+  if (!empty($sortid)) {
+    $object->setSortid($sortid);
+  }
+  
+  // proceed for $my_expressurl
+  $object->setMyExpressurl($my_expressurl);
   
   // proceed for $content
   $object->setContent($content);
@@ -77,6 +88,12 @@ if (isset($_POST['submit'])) {
   
   // proceed for $outurl8
   $object->setOuturl8($outurl8);
+  
+  // proceed for $fid
+  $object->setFid($fid);
+  
+  // proceed for $post_id
+  $object->setPostId($post_id);
   if ($error_flag == false) {
     if ($object->save()) {
       Message::register(new Message(Message::SUCCESS, i18n(array("en" => "Record saved", "zh" => "记录保存成功"))));

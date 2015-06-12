@@ -3,7 +3,7 @@
 <div id="page-wrapper">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header"><?php i18n_echo(array('en' => 'SydneyToday Zhekou','zh' => '今日悉尼 - zhekou',)); ?></h1>
+      <h1 class="page-header"><?php i18n_echo(array('en' => 'SydneyToday Xinping','zh' => '今日悉尼 - 新品',)); ?></h1>
     </div>
   </div>
   
@@ -20,6 +20,7 @@
       <tr role="row">
                 <th>id</th>
                 <th>title</th>
+
                 <th>fid</th>
                 <th>post_id</th>
                 <th>Actions</th>
@@ -30,12 +31,13 @@
     <tr>
             <td><?php echo $object->getId() ?></td>
             <td><?php echo $object->getTitle() ?></td>
+
             <td><?php echo $object->getFid() ?></td>
             <td><?php echo $object->getPostId() ?></td>
             <td>
         <div class="btn-group">
-          <a class="btn btn-default btn-sm" href="<?php echo uri('admin/st_zhekou/edit/' . $object->getId()); ?>"><i class="fa fa-edit"></i></a>
-          <a onclick="return confirm('<?php echo i18n(array('en' => 'Are you sure to delete this record ?', 'zh' => '你确定删除这条记录吗 ?')); ?>');" class="btn btn-default btn-sm" href="<?php echo uri('admin/st_zhekou/delete/' . $object->getId(), false); ?>"><i class="fa fa-remove"></i></a>
+          <a class="btn btn-default btn-sm" href="<?php echo uri('admin/st_xinping/edit/' . $object->getId()); ?>"><i class="fa fa-edit"></i></a>
+          <a onclick="return confirm('<?php echo i18n(array('en' => 'Are you sure to delete this record ?', 'zh' => '你确定删除这条记录吗 ?')); ?>');" class="btn btn-default btn-sm" href="<?php echo uri('admin/st_xinping/delete/' . $object->getId(), false); ?>"><i class="fa fa-remove"></i></a>
         </div>
       </td>
     </tr>

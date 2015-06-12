@@ -1,7 +1,11 @@
 <?php
 
-$object = new StZhekou();
-  
+$id = isset($vars[1]) ? $vars[1] : null;
+$object = StXinping::findById($id);
+if (is_null($object)) {
+  HTML::forward('core/404');
+}
+
 // handle form submission
 if (isset($_POST['submit'])) {
   $error_flag = false;
@@ -14,10 +18,12 @@ if (isset($_POST['submit'])) {
   $email = isset($_POST["email"]) ? strip_tags($_POST["email"]) : null;  
   // validation for $editpwd
   $editpwd = isset($_POST["editpwd"]) ? strip_tags($_POST["editpwd"]) : null;  
-  // validation for $sortid
-  $sortid = isset($_POST["sortid"]) ? strip_tags($_POST["sortid"]) : null;  
-  // validation for $my_expressurl
-  $my_expressurl = isset($_POST["my_expressurl"]) ? strip_tags($_POST["my_expressurl"]) : null;  
+  // validation for $jiaoyifangshi
+  $jiaoyifangshi = isset($_POST["jiaoyifangshi"]) ? strip_tags($_POST["jiaoyifangshi"]) : null;  
+  // validation for $shifousonghuo
+  $shifousonghuo = isset($_POST["shifousonghuo"]) ? strip_tags($_POST["shifousonghuo"]) : null;  
+  // validation for $chanpingfenlei
+  $chanpingfenlei = isset($_POST["chanpingfenlei"]) ? strip_tags($_POST["chanpingfenlei"]) : null;  
   // validation for $content
   $content = isset($_POST["content"]) ? $_POST["content"] : null;  
   // validation for $outurl1
@@ -50,13 +56,20 @@ if (isset($_POST['submit'])) {
   // proceed for $editpwd
   $object->setEditpwd($editpwd);
   
-  // proceed for $sortid
-  if (!empty($sortid)) {
-    $object->setSortid($sortid);
+  // proceed for $jiaoyifangshi
+  if (!empty($jiaoyifangshi)) {
+    $object->setJiaoyifangshi($jiaoyifangshi);
   }
   
-  // proceed for $my_expressurl
-  $object->setMyExpressurl($my_expressurl);
+  // proceed for $shifousonghuo
+  if (!empty($shifousonghuo)) {
+    $object->setShifousonghuo($shifousonghuo);
+  }
+  
+  // proceed for $chanpingfenlei
+  if (!empty($chanpingfenlei)) {
+    $object->setChanpingfenlei($chanpingfenlei);
+  }
   
   // proceed for $content
   $object->setContent($content);
@@ -106,15 +119,15 @@ $html = new HTML();
 
 $html->renderOut('core/backend/html_header', array(
   'title' => i18n(array(
-  'en' => 'Create SydneyToday Zhekou',
-  'zh' => 'Create 今日悉尼 - zhekou',
+  'en' => 'Edit SydneyToday Xinping',
+  'zh' => 'Edit 今日悉尼 - 新品',
   )),
 ));
 $html->output('<div id="wrapper">');
 $html->renderOut('core/backend/header');
 
 
-$html->renderOut('sydneytoday/backend/st_zhekou_create', array(
+$html->renderOut('sydneytoday/backend/st_xinping_edit', array(
   'object' => $object
 ));
 

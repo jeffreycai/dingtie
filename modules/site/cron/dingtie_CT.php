@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../../../bootstrap.php';
 
 $fid = 172;
-$tid = 3588697;
+$tid = 3588950;
 
 //$alternative_message = '有意请联系： 0423430069   微信： pikaqiu336922';
 
