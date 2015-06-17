@@ -54,6 +54,21 @@ class Crawler {
     $this->use_tor = true;
   }
   
+  public function setMultipart() {
+    $this->addHeader("Content-Type:multipart/form-data");
+  }
+  
+  public function setReferer($url) {
+    $this->addHeader("Referer: " . $url);
+  }
+  
+  public function addHeader($content) {
+    if (!is_array($this->header)) {
+      $this->header = array();
+    }
+    $this->header[] = $content;
+  }
+  
   public function unSetUseTor() {
     $this->use_tor = false;
   }

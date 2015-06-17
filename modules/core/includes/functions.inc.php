@@ -358,8 +358,8 @@ function print_uri($uri, $i18n = true) {
  * @param type $length
  * @return type
  */
-function get_random_string($length = 10) {
-  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+function get_random_string($length = 10, $str_base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+  $characters = $str_base;
   $charactersLength = strlen($characters);
   $randomString = '';
   for ($i = 0; $i < $length; $i++) {

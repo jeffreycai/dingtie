@@ -2,12 +2,12 @@ mail:
   # conf for email sending to amdin
   admin:
     to: jeffreycaizhenyuan@gmail.com
-    from: bluestreamjc@tpg.com.au
+    from: findloveinsydney@gmail.com
     mailer: smtp
     SMTPSecure: tls
-    host: mail.tpg.com.au
+    host: smtp.mandrillapp.com
     port: 587
-    username: bluestreamjc@tpg.com.au
-    nickname: My TPG Mailbox
-    password: Monday01
+    username: jeanboy186@163.com
+    nickname: DingTie
+    password: WclNgz4kJJ_Yh_I4gvbj_g
     
