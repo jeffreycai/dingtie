@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <h1 class="page-header"><?php i18n_echo(array(
         'en' => 'SydneyToday Zhekou',
-        'zh' => '今日悉尼 - zhekou',
+        'zh' => '今日悉尼 - 折扣',
       )); ?></h1>
     </div>
   </div>

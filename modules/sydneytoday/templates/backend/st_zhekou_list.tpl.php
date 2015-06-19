@@ -3,7 +3,7 @@
 <div id="page-wrapper">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header"><?php i18n_echo(array('en' => 'SydneyToday Zhekou','zh' => '今日悉尼 - zhekou',)); ?></h1>
+      <h1 class="page-header"><?php i18n_echo(array('en' => 'SydneyToday Zhekou','zh' => '今日悉尼 - 折扣',)); ?></h1>
     </div>
   </div>
   

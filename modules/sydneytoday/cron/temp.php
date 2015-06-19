@@ -1,6 +1,6 @@
 <?php
 
-var_dump(iconv('utf-8', 'gb2312', '市场的下一个爆点-Washington Park Riverwood
+var_dump(iconv('utf-8','gb2312', '市场的下一个爆点-Washington Park Riverwood
 
 欢迎来电咨询：  0406 079 385
 或加微信： fcgw007
@@ -34,24 +34,24 @@ is coming
 
 交通
 
-1 步行700到达Riverwood火車站, 到central25min, 20min到机场, 2016西南铁路建好后, 时间将大大缩减
-2 距离最近的巴士站只要20米, 940, 944, 945均在步行5分钟内范围内, 可到bankstown、hursville等
-3 开车5分钟到Roseland Shopping centre,里面有coles,targer,jb hi­fi等
+1 步行700米到达火车站，到central25min， 20min到机场， 2016西南铁路建好后， 时间将大大缩减
+2 距离最近的巴士站只要20米， 940， 944， 945均在步行5分钟内范围内， 可到bankstown、hursville等
+3 开车5分钟到Roseland Shopping centre，里面有coles，targer，jb hi-fi等
 4 开车北上可上M5
 5 步行往南走12min到达woolworth和coles的 riverwood店
 6 开车8分钟车程便能到Hurstville华人区
-7 开车8分钟Beverly Hills,有名的海鲜一条街
+7 开车8分钟Beverly Hills，有名的海鲜一条街
 8 开车8分钟到UWS Bankstown Campus
-9 开车20分钟到悉尼大學、新南威尔士大学、悉尼科技大学
-10 开车10分钟内即可到达Bankstown­Lidcombe医院。
+9 开车20分钟到悉尼大学、新南威尔士大学、悉尼科技大学
+10 开车10分钟内即可到达Bankstown-Lidcombe医院。
 
 
 配套购物广场
 
-1. Payce 建造的配套广场-3000平米Market Square是Payce 为华盛顿公园小区打造的配套设施, 集餐饮、购物、休闲于一体。包括餐厅、咖啡店、零售店、 蔬果店、日常用品店、路边停车位等, 还有一个state­of­the­art library就在Market Square。
-2. 有当地著名的Riverwood Community Centre, 以及一个斥资900万澳元并拥有室内运动场馆的健身中心只相距150米。
+1. Payce 建造的配套广场-3000平米Market Square是Payce 为华盛顿公园小区打造的配套设施， 集餐饮、购物、休闲于一体。包括餐厅、咖啡店、零售店、 蔬果店、日常用品店、路边停车位等， 还有一个state-of-the-art library就在Market Square。
+2. 有当地著名的Riverwood Community Centre， 以及一个斥资900万澳元并拥有室内运动场馆的健身中心只相距150米。
 3. 周边有很多club、bbq和儿童活动区
-4. 绿地、河流资源丰富,步行400米可进入SaltPan Creek Wetlands湿地,可进行多种室外活动和水上项 目
+4. 绿地、河流资源丰富，步行400米可进入SaltPan Creek Wetlands湿地，可进行多种室外活动和水上项 目
 
 
 Payce 集团的总经理 Dominic Sullivan 说：“华盛顿公园是我们迄今手笔最大的开发项目，不过我们确实认为人们不仅仅愿意在这里买下首套物业，而且愿意在这里将孩子抚养成人并且安享晚年。我们的目标之一就是将俱乐部和有趣的活动引入小区。”

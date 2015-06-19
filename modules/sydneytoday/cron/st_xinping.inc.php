@@ -64,7 +64,7 @@ if (strpos($html, 'false') === false) {
   die('Error: qacode failed');
 }
 //_debug('<meta charset=gb2312></meta>'.iconv('utf8','gb2312', $object->getContent()));
-$content = iconv('utf8','gb2312', $object->getContent());
+$content = iconv('utf8','gb2312//IGNORE', $object->getContent());
 if ($content == false) {
   sendemailAdmin('Dingtie - SydneyToday新品 error', 'For st_xinping id:'.$object->getId().' == '.'Error: content iconv failed');
   die('Error: content iconv failed');
