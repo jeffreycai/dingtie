@@ -44,3 +44,18 @@
   echo StXinping::createTableIfNotExist() ? "success\n" : "fail\n";
   }
   
+  //-- StZufang:Clear cache
+  if ($command == "cc") {
+    if ($arg1 == "all" || $arg1 == "sydneytoday") {
+      echo " - Drop table 'st_zufang' ";
+      echo StZufang::dropTable() ? "success\n" : "fail\n";
+    }
+  }
+
+  //-- StZufang:Import DB
+  if ($command == "import" && $arg1 == "db" && (is_null($arg2) || $arg2 == "st_zufang") ) {
+  //- create tables if not exits
+  echo " - Create table 'st_zufang' ";
+  echo StZufang::createTableIfNotExist() ? "success\n" : "fail\n";
+  }
+  

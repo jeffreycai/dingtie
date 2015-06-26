@@ -62,3 +62,24 @@ routing:
     isSecure: 1
     i18n: 0
     controller: sydneytoday/backend/st_xinping_delete
+
+  admin_st_zufang_list:
+    path: ^\/admin\/st_zufang\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zufang_list
+  admin_st_zufang_edit:
+    path: ^\/admin\/st_zufang\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zufang_edit
+  admin_st_zufang_create:
+    path: ^\/admin\/st_zufang\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: sydneytoday/backend/st_zufang_create
+  admin_st_zufang_delete:
+    path: ^\/admin\/st_zufang\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: sydneytoday/backend/st_zufang_delete

@@ -236,3 +236,162 @@ st_xinping:
     names:
       en: "SydneyToday Xinping"
       zh: "今日悉尼 - 新品"
+      
+
+st_zufang:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    title: VARCHAR(512)
+    email: VARCHAR(50)
+    editpwd: VARCHAR(20)
+    jiaoyixingzhi: VARCHAR(6)
+    chuzufangshi: VARCHAR(6)
+    jiage: VARCHAR(6)
+    huxing: VARCHAR(10)
+    suozaiquyu: VARCHAR(20)
+    fangwudizhi: VARCHAR(128)
+    fangwupeizhi: VARCHAR(128)
+    fujingsheshi: VARCHAR(128)
+    content: TEXT
+    outurl1: VARCHAR(512)
+    outurl2: VARCHAR(512)
+    outurl3: VARCHAR(512)
+    outurl4: VARCHAR(512)
+    outurl5: VARCHAR(512)
+    outurl6: VARCHAR(512)
+    outurl7: VARCHAR(512)
+    outurl8: VARCHAR(512)
+    fid: INT
+    post_id: INT
+  form:
+    fields:
+      title:
+        widget: text
+        widget_conf:
+          required: 0
+      email:
+        widget: text
+        widget_conf:
+          required: 1
+      editpwd:
+        widget: text
+        widget_conf:
+          required: 1
+      jiaoyixingzhi:
+        widget: select
+        widget_conf:
+          required: 1
+          options:
+            "个人": "个人"
+            "中介": "中介"
+      chuzufangshi:
+        widget: checkbox_multiple
+        widget_conf:
+          required: 0
+          options:
+            "整租": "整租"
+            "单间": "单间"
+            "客厅": "客厅"
+            "Share": "Share"
+      jiage:
+        widget: text
+        widget_conf:
+          required: 1
+      huxing:
+        widget: select
+        widget_conf:
+          required: 1
+          options:
+            "Apartment": "Apartment"
+            "Studio": "Studio"
+            "Unit": "Unit"
+            "House": "House"
+            "Town House": "Town House"
+            "仓库/车库": "仓库/车库"
+            "Office": "Office"
+            "其它": "其它"
+      suozaiquyu:
+        widget: text
+        widget_conf:
+          required: 1
+      fangwudizhi:
+        widget: text
+        widget_conf:
+          required: 0
+      fangwupeizhi:
+        widget: checkbox_multiple
+        widget_conf:
+          required: 0
+          options:
+            "包水": "包水"
+            "包电": "包电"
+            "包宽带": "包宽带"
+            "包煤气": "包煤气"
+            "床": "床"
+            "洗衣机": "洗衣机"
+            "空调": "空调"
+            "冰箱": "冰箱"
+            "微波炉": "微波炉"
+            "电视机": "电视机"
+            "停车位": "停车位"
+            "其它": "其它"
+      fujingsheshi:
+        widget: checkbox_multiple
+        widget_conf:
+          required: 0
+          options:
+            "火车站": "火车站"
+            "公车站": "公车站"
+            "学校": "学校"
+            "超市": "超市"
+            "健身房": "健身房"
+            "游泳池": "游泳池"
+            "其它": "其它"
+      content:
+        widget: textarea
+        widget_conf:
+          required: 0
+      outurl1:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl2:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl3:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl4:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl5:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl6:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl7:
+        widget: text
+        widget_conf:
+          required: 0
+      outurl8:
+        widget: text
+        widget_conf:
+          required: 0
+      fid:
+        widget: text
+        widget_conf:
+          required: 0
+      post_id:
+        widget: text
+        widget_conf:
+          required: 0
+    names:
+      en: "SydneyToday Zufang"
+      zh: "今日悉尼 - 租房"
