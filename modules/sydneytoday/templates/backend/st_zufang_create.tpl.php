@@ -44,13 +44,14 @@
     </select>
 </div>
   
+       <?php $items = ($object->isNew() ? (isset($_POST['chuzufangshi']) ? explode(';', $_POST['chuzufangshi']) : '') : explode(';', $object->getChuzufangshi() )) ?>
 <div class='form-group'>
   <label>chuzufangshi</label>
     <div class='checkbox'>
-      <label><input type='checkbox' name='chuzufangshi[]' value='整租' /> 整租</label>
-      <label><input type='checkbox' name='chuzufangshi[]' value='单间' /> 单间</label>
-      <label><input type='checkbox' name='chuzufangshi[]' value='客厅' /> 客厅</label>
-      <label><input type='checkbox' name='chuzufangshi[]' value='Share' /> Share</label>
+      <label><input type='checkbox' <?php if (in_array('整租', $items)): ?>checked='checked'<?php endif; ?> name='chuzufangshi[]' value='整租' /> 整租</label>
+      <label><input type='checkbox' <?php if (in_array('单间', $items)): ?>checked='checked'<?php endif; ?> name='chuzufangshi[]' value='单间' /> 单间</label>
+      <label><input type='checkbox' <?php if (in_array('客厅', $items)): ?>checked='checked'<?php endif; ?> name='chuzufangshi[]' value='客厅' /> 客厅</label>
+      <label><input type='checkbox' <?php if (in_array('Share', $items)): ?>checked='checked'<?php endif; ?> name='chuzufangshi[]' value='Share' /> Share</label>
     </div>
 </div>
   
@@ -83,34 +84,36 @@
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['fangwudizhi']) ? strip_tags($_POST['fangwudizhi']) : '') : $object->getFangwudizhi()))) ?>' type='text' class='form-control' id='fangwudizhi' name='fangwudizhi' />
 </div>
   
+       <?php $items = ($object->isNew() ? (isset($_POST['fangwupeizhi']) ? explode(';', $_POST['fangwupeizhi']) : '') : explode(';', $object->getFangwupeizhi() )) ?>
 <div class='form-group'>
   <label>fangwupeizhi</label>
     <div class='checkbox'>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='包水' /> 包水</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='包电' /> 包电</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='包宽带' /> 包宽带</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='包煤气' /> 包煤气</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='床' /> 床</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='洗衣机' /> 洗衣机</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='空调' /> 空调</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='冰箱' /> 冰箱</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='微波炉' /> 微波炉</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='电视机' /> 电视机</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='停车位' /> 停车位</label>
-      <label><input type='checkbox' name='fangwupeizhi[]' value='其它' /> 其它</label>
+      <label><input type='checkbox' <?php if (in_array('包水', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='包水' /> 包水</label>
+      <label><input type='checkbox' <?php if (in_array('包电', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='包电' /> 包电</label>
+      <label><input type='checkbox' <?php if (in_array('包宽带', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='包宽带' /> 包宽带</label>
+      <label><input type='checkbox' <?php if (in_array('包煤气', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='包煤气' /> 包煤气</label>
+      <label><input type='checkbox' <?php if (in_array('床', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='床' /> 床</label>
+      <label><input type='checkbox' <?php if (in_array('洗衣机', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='洗衣机' /> 洗衣机</label>
+      <label><input type='checkbox' <?php if (in_array('空调', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='空调' /> 空调</label>
+      <label><input type='checkbox' <?php if (in_array('冰箱', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='冰箱' /> 冰箱</label>
+      <label><input type='checkbox' <?php if (in_array('微波炉', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='微波炉' /> 微波炉</label>
+      <label><input type='checkbox' <?php if (in_array('电视机', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='电视机' /> 电视机</label>
+      <label><input type='checkbox' <?php if (in_array('停车位', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='停车位' /> 停车位</label>
+      <label><input type='checkbox' <?php if (in_array('其它', $items)): ?>checked='checked'<?php endif; ?> name='fangwupeizhi[]' value='其它' /> 其它</label>
     </div>
 </div>
   
+       <?php $items = ($object->isNew() ? (isset($_POST['fujingsheshi']) ? explode(';', $_POST['fujingsheshi']) : '') : explode(';', $object->getFujingsheshi() )) ?>
 <div class='form-group'>
   <label>fujingsheshi</label>
     <div class='checkbox'>
-      <label><input type='checkbox' name='fujingsheshi[]' value='火车站' /> 火车站</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='公车站' /> 公车站</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='学校' /> 学校</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='超市' /> 超市</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='健身房' /> 健身房</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='游泳池' /> 游泳池</label>
-      <label><input type='checkbox' name='fujingsheshi[]' value='其它' /> 其它</label>
+      <label><input type='checkbox' <?php if (in_array('火车站', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='火车站' /> 火车站</label>
+      <label><input type='checkbox' <?php if (in_array('公车站', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='公车站' /> 公车站</label>
+      <label><input type='checkbox' <?php if (in_array('学校', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='学校' /> 学校</label>
+      <label><input type='checkbox' <?php if (in_array('超市', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='超市' /> 超市</label>
+      <label><input type='checkbox' <?php if (in_array('健身房', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='健身房' /> 健身房</label>
+      <label><input type='checkbox' <?php if (in_array('游泳池', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='游泳池' /> 游泳池</label>
+      <label><input type='checkbox' <?php if (in_array('其它', $items)): ?>checked='checked'<?php endif; ?> name='fujingsheshi[]' value='其它' /> 其它</label>
     </div>
 </div>
   

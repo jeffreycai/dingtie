@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
   }
   
   // proceed for $chuzufangshi
- // TODO
+  $object->setChuzufangshi(implode(";", $chuzufangshi));
   
   // proceed for $jiage
   $object->setJiage($jiage);
@@ -115,10 +115,10 @@ if (isset($_POST['submit'])) {
   $object->setFangwudizhi($fangwudizhi);
   
   // proceed for $fangwupeizhi
- // TODO
+  $object->setFangwupeizhi(implode(";", $fangwupeizhi));
   
   // proceed for $fujingsheshi
- // TODO
+  $object->setFujingsheshi(implode(";", $fujingsheshi));
   
   // proceed for $content
   $object->setContent($content);

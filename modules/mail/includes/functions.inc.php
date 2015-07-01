@@ -6,6 +6,14 @@ function load_library_phpmailer() {
 
 function sendemailAdmin($subject, $msg) {
   $settings = Vars::getSettings();
+  $username = $settings['mail']['admin']['username'];
+  $password = $settings['mail']['admin']['password'];
+  if (strpos($username, '@') == false) {
+    $username = decrypt($username);
+    $password = decrypt($password);
+  }
+  
+  
   load_library_phpmailer();
 
   $mail = new PHPMailer(true); // the true param means it will throw exceptions on errors, which we need to catch
@@ -20,8 +28,8 @@ function sendemailAdmin($subject, $msg) {
     $mail->SMTPSecure = $settings['mail']['admin']['SMTPSecure'];                 // sets the prefix to the servier
     $mail->Host       = $settings['mail']['admin']['host'];      // sets GMAIL as the SMTP server
     $mail->Port       = $settings['mail']['admin']['port'];                   // set the SMTP port for the GMAIL server
-    $mail->Username   = $settings['mail']['admin']['username'];  // GMAIL username
-    $mail->Password   = $settings['mail']['admin']['password'];            // GMAIL password
+    $mail->Username   = $username;  // GMAIL username
+    $mail->Password   = $password;            // GMAIL password
     $mail->AddReplyTo($settings['mail']['admin']['to']);
     $mail->AddAddress($settings['mail']['admin']['to']);
     $mail->SetFrom($settings['mail']['admin']['from'], $settings['mail']['admin']['nickname']);
