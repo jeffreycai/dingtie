@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-$fid = 49;
-$tid = 3507039;
+$fid = 173;
+$tid = 3609897;
 
 $alternative_message = '顶顶顶顶';
 

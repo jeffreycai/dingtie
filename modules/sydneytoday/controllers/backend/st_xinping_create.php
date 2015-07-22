@@ -12,6 +12,8 @@ if (isset($_POST['submit'])) {
   $title = isset($_POST["title"]) ? strip_tags($_POST["title"]) : null;  
   // validation for $email
   $email = isset($_POST["email"]) ? strip_tags($_POST["email"]) : null;  
+  // validation for $mobile
+  $mobile = isset($_POST["mobile"]) ? strip_tags($_POST["mobile"]) : null;  
   // validation for $editpwd
   $editpwd = isset($_POST["editpwd"]) ? strip_tags($_POST["editpwd"]) : null;  
   // validation for $jiaoyifangshi
@@ -20,34 +22,23 @@ if (isset($_POST['submit'])) {
   $shifousonghuo = isset($_POST["shifousonghuo"]) ? strip_tags($_POST["shifousonghuo"]) : null;  
   // validation for $chanpingfenlei
   $chanpingfenlei = isset($_POST["chanpingfenlei"]) ? strip_tags($_POST["chanpingfenlei"]) : null;  
+  // validation for $jiage
+  $jiage = isset($_POST["jiage"]) ? strip_tags($_POST["jiage"]) : null;  
   // validation for $content
   $content = isset($_POST["content"]) ? $_POST["content"] : null;  
-  // validation for $outurl1
-  $outurl1 = isset($_POST["outurl1"]) ? strip_tags($_POST["outurl1"]) : null;  
-  // validation for $outurl2
-  $outurl2 = isset($_POST["outurl2"]) ? strip_tags($_POST["outurl2"]) : null;  
-  // validation for $outurl3
-  $outurl3 = isset($_POST["outurl3"]) ? strip_tags($_POST["outurl3"]) : null;  
-  // validation for $outurl4
-  $outurl4 = isset($_POST["outurl4"]) ? strip_tags($_POST["outurl4"]) : null;  
-  // validation for $outurl5
-  $outurl5 = isset($_POST["outurl5"]) ? strip_tags($_POST["outurl5"]) : null;  
-  // validation for $outurl6
-  $outurl6 = isset($_POST["outurl6"]) ? strip_tags($_POST["outurl6"]) : null;  
-  // validation for $outurl7
-  $outurl7 = isset($_POST["outurl7"]) ? strip_tags($_POST["outurl7"]) : null;  
-  // validation for $outurl8
-  $outurl8 = isset($_POST["outurl8"]) ? strip_tags($_POST["outurl8"]) : null;  
-  // validation for $fid
-  $fid = isset($_POST["fid"]) ? strip_tags($_POST["fid"]) : null;  
-  // validation for $post_id
-  $post_id = isset($_POST["post_id"]) ? strip_tags($_POST["post_id"]) : null;  /// proceed submission
+  // validation for $images
+  $images = isset($_POST["images"]) ? strip_tags(trim($_POST["images"])) : null;  
+  // validation for $nid
+  $nid = isset($_POST["nid"]) ? strip_tags($_POST["nid"]) : null;  /// proceed submission
   
   // proceed for $title
   $object->setTitle($title);
   
   // proceed for $email
   $object->setEmail($email);
+  
+  // proceed for $mobile
+  $object->setMobile($mobile);
   
   // proceed for $editpwd
   $object->setEditpwd($editpwd);
@@ -67,38 +58,17 @@ if (isset($_POST['submit'])) {
     $object->setChanpingfenlei($chanpingfenlei);
   }
   
+  // proceed for $jiage
+  $object->setJiage($jiage);
+  
   // proceed for $content
   $object->setContent($content);
   
-  // proceed for $outurl1
-  $object->setOuturl1($outurl1);
+  // proceed for $images
+  $object->setImages($images);
   
-  // proceed for $outurl2
-  $object->setOuturl2($outurl2);
-  
-  // proceed for $outurl3
-  $object->setOuturl3($outurl3);
-  
-  // proceed for $outurl4
-  $object->setOuturl4($outurl4);
-  
-  // proceed for $outurl5
-  $object->setOuturl5($outurl5);
-  
-  // proceed for $outurl6
-  $object->setOuturl6($outurl6);
-  
-  // proceed for $outurl7
-  $object->setOuturl7($outurl7);
-  
-  // proceed for $outurl8
-  $object->setOuturl8($outurl8);
-  
-  // proceed for $fid
-  $object->setFid($fid);
-  
-  // proceed for $post_id
-  $object->setPostId($post_id);
+  // proceed for $nid
+  $object->setNid($nid);
   if ($error_flag == false) {
     if ($object->save()) {
       Message::register(new Message(Message::SUCCESS, i18n(array("en" => "Record saved", "zh" => "记录保存成功"))));

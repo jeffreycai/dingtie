@@ -20,9 +20,16 @@
       <tr role="row">
                 <th>id</th>
                 <th>title</th>
-
-                <th>fid</th>
-                <th>post_id</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>editpwd</th>
+                <th>jiaoyifangshi</th>
+                <th>shifousonghuo</th>
+                <th>chanpingfenlei</th>
+                <th>jiage</th>
+                <th>content</th>
+                <th>images</th>
+                <th>nid</th>
                 <th>Actions</th>
       </tr>
   </thead>
@@ -31,9 +38,16 @@
     <tr>
             <td><?php echo $object->getId() ?></td>
             <td><?php echo $object->getTitle() ?></td>
-
-            <td><?php echo $object->getFid() ?></td>
-            <td><?php echo $object->getPostId() ?></td>
+            <td><?php echo $object->getEmail() ?></td>
+            <td><?php echo $object->getMobile() ?></td>
+            <td><?php echo $object->getEditpwd() ?></td>
+            <td><?php echo $object->getJiaoyifangshi() ?></td>
+            <td><?php echo $object->getShifousonghuo() ?></td>
+            <td><?php echo $object->getChanpingfenlei() ?></td>
+            <td><?php echo $object->getJiage() ?></td>
+            <td><?php echo $object->getContent() ?></td>
+            <td><?php echo $object->getImages() ?></td>
+            <td><?php echo $object->getNid() ?></td>
             <td>
         <div class="btn-group">
           <a class="btn btn-default btn-sm" href="<?php echo uri('admin/st_xinping/edit/' . $object->getId()); ?>"><i class="fa fa-edit"></i></a>

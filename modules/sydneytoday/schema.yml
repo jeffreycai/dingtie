@@ -131,21 +131,15 @@ st_xinping:
     id: INT NOT NULL AUTO_INCREMENT
     title: VARCHAR(512)
     email: VARCHAR(50)
+    mobile: VARCHAR(20)
     editpwd: VARCHAR(20)
     jiaoyifangshi: VARCHAR(6)
-    shifousonghuo: VARCHAR(4)
+    shifousonghuo: VARCHAR(6)
     chanpingfenlei: VARCHAR(16)
+    jiage: VARCHAR(16)
     content: TEXT
-    outurl1: VARCHAR(512)
-    outurl2: VARCHAR(512)
-    outurl3: VARCHAR(512)
-    outurl4: VARCHAR(512)
-    outurl5: VARCHAR(512)
-    outurl6: VARCHAR(512)
-    outurl7: VARCHAR(512)
-    outurl8: VARCHAR(512)
-    fid: INT
-    post_id: INT
+    images: VARCHAR(800)
+    nid: INT
   form:
     fields:
       title:
@@ -153,6 +147,10 @@ st_xinping:
         widget_conf:
           required: 0
       email:
+        widget: text
+        widget_conf:
+          required: 0
+      mobile:
         widget: text
         widget_conf:
           required: 0
@@ -165,71 +163,55 @@ st_xinping:
         widget_conf:
           required: 0
           options:
-            "出售": "出售"
-            "求购": "求购"
+            "_none": "_none"
+            "102": "出售"
+            "103": "求购"
       shifousonghuo:
         widget: select
         widget_conf:
           required: 0
           options:
-            "是": "是"
-            "否": "否"
+            "_none": "_none"
+            "98": "不限"
+            "99": "是"
+            "100": "否"
       chanpingfenlei:
         widget: select
         widget_conf:
           required: 0
           options:
-            "家居用品": "家居用品"
-            "家电/电脑": "家电/电脑"
-            "手机及配件": "手机及配件"
-            "服装饰品": "服装饰品"
-            "美容护肤": "美容护肤"
-            "烟酒食品": "烟酒食品"
-            "游戏娱乐": "游戏娱乐"
-            "汽车及配件": "汽车及配件"
-            "成人用品": "成人用品"
-            "其它": "其它"
+            "_none": " - 无 -"
+            "104": "不限"
+            "105": "家居用品"
+            "106": "家电/电脑"
+            "107": "手机及配件"
+            "108": "服装饰品"
+            "109": "美容护肤"
+            "110": "烟酒食品"
+            "111": "游戏娱乐"
+            "112": "学习资料"
+            "113": "汽车及配件"
+            "114": "成人用品"
+            "115": "其它"
+      jiage:
+        widget: text
+        widget_conf:
+          required: 0
       content:
         widget: textarea
         widget_conf:
           required: 0
-      outurl1:
-        widget: text
+      images:
+        widget: image
         widget_conf:
           required: 0
-      outurl2:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl3:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl4:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl5:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl6:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl7:
-        widget: text
-        widget_conf:
-          required: 0
-      outurl8:
-        widget: text
-        widget_conf:
-          required: 0
-      fid:
-        widget: text
-        widget_conf:
-          required: 0
-      post_id:
+          multiple: 1
+          upload_dir: files/fields/images
+          transform:
+            dimension: 600x800
+            refill: "0,0,0"
+#            watermark: modules/site/assets/images/favicon.png
+      nid:
         widget: text
         widget_conf:
           required: 0

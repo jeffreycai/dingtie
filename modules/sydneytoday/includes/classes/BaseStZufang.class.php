@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `st_zufang` (
   `email` VARCHAR(50) ,
   `editpwd` VARCHAR(20) ,
   `jiaoyixingzhi` VARCHAR(6) ,
-  `chuzufangshi` VARCHAR(6) ,
+  `chuzufangshi` VARCHAR(32) ,
   `jiage` VARCHAR(6) ,
   `huxing` VARCHAR(10) ,
   `suozaiquyu` VARCHAR(20) ,
